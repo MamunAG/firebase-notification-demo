@@ -6,6 +6,7 @@ import { getToken, onMessage } from 'firebase/messaging'
 import { messaging } from './firebase/firebaseConfig'
 import { toast, ToastContainer } from 'react-toastify'
 import Message from './Message'
+import axios from 'axios'
 
 function App() {
   const { VITE_APP_VAPID_KEY } = import.meta.env;
@@ -23,6 +24,8 @@ function App() {
 
       //We can send token to server
       console.log("Token generated : ", token);
+      // const FCMTokenRequest = { Token: token, Topic: null };
+      // axios.post(`${api.productionUrl}/Notification/subscribe`, FCMTokenRequest);
     } else if (permission === "denied") {
       //notifications are blocked
       alert("You denied for the notification");
