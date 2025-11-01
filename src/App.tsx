@@ -6,7 +6,6 @@ import { getToken, onMessage } from 'firebase/messaging'
 import { messaging } from './firebase/firebaseConfig'
 import { toast, ToastContainer } from 'react-toastify'
 import Message from './Message'
-import axios from 'axios'
 
 function App() {
   const { VITE_APP_VAPID_KEY } = import.meta.env;
